@@ -28,5 +28,3 @@ Karena API tidak mendukung penambahan data ke database, fitur registrasi hanya a
 
 ### Data Keranjang
 Karena API tidak mendukung penambahan data ke database, data keranjang akan disimpan di **localStorage**, bukan pada akun pengguna.
-
-# frontend-test
