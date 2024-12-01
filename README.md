@@ -1,5 +1,5 @@
 ## 🚀 Production
-Buka [http://localhost:3000](http://localhost:3000) untuk melihat hasil aplikasi.
+Buka [https://shopman-cashplus-test.vercel.app](https://shopman-cashplus-test.vercel.app/product) untuk melihat hasil aplikasi.
 
 ---
 
@@ -25,4 +25,4 @@ Untuk melihat daftar akun lainnya, Anda dapat mengaksesnya di API berikut:
 Karena API tidak mendukung penambahan data ke database, fitur registrasi hanya akan memberikan respons **200 OK** jika berhasil, tanpa menambahkan pengguna baru ke sistem.
 
 ### Data Keranjang
-Karena API tidak mendukung penambahan data ke database, data keranjang akan disimpan di **localStorage**, bukan pada akun pengguna.
+Karena API tidak mendukung penambahan data ke database, data keranjang akan disimpan di **localStorage**, bukan pada database akun pengguna.
