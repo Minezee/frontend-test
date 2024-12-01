@@ -48,19 +48,16 @@ export const useFilters = (initialCategory: string, initialSort: string) => {
   const applyFiltersAndSorting = (productData: any[]) => {
     let filteredProducts = productData;
 
-    // Filter by search query
     if (searchQuery) {
       filteredProducts = filteredProducts.filter((product) =>
         product.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
-    // Filter by category
     if (activeCategory) {
       filteredProducts = filteredProducts.filter((product) => product.category === activeCategory);
     }
 
-    // Sorting logic
     filteredProducts = filteredProducts.slice().sort((a, b) => {
       switch (sortCriteria) {
         case 'priceAsc':

@@ -33,7 +33,6 @@ export async function POST(request: Request) {
       });
     });
 
-    // Mengembalikan token dan redirect_url dalam response
     return NextResponse.json(
       {
         token: transaction.token,
