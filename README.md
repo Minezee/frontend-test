@@ -1,5 +1,5 @@
 ## 🚀 Production
-Buka [http://localhost:3000](http://localhost:3000) untuk melihat hasil aplikasi.
+Buka [https://shopman-cashplus-test.vercel.app](https://shopman-cashplus-test.vercel.app/product) untuk melihat hasil aplikasi.
 
 ---
 
