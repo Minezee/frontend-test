@@ -23,7 +23,7 @@ const Input = ({
         type={type}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className='w-full border border-gray-300 rounded-md p-2'
+        className='w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-gray-400'
       />
     </label>
   )
