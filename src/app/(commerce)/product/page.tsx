@@ -21,6 +21,7 @@ import { sortOption } from "@/utils/data/sortOption";
 
 // @Helpers
 import { arrayToObject } from "@/utils/helpers/arrayToObject";
+import HomeBanner from "@/components/UI/HomeBanner";
 
 const Product = () => {
   const searchParams = useSearchParams();
@@ -36,13 +37,7 @@ const Product = () => {
   return (
     <main className="container pb-10">
       {/* @Banner */}
-      <header className="relative w-full bg-gray-bg h-auto md:h-72 rounded-lg p-3 md:p-10 flex flex-col-reverse md:flex-row items-center md:items-start justify-between">
-        <div className="flex flex-col justify-start md:justify-center h-full gap-3 md:gap-10">
-          <h2 className="text-primary font-bold text-2xl md:text-5xl md:max-w-[600px] z-40">Grab Up to 50% Off On Selected Headphone </h2>
-          <button className="px-4 py-2 bg-primary w-fit text-white rounded-full">Buy Now</button>
-        </div>
-        <Image src={"/assets/images/headphone.png"} width={290} height={290} alt="Product-Headphones" className="md:absolute z-10 -right-0 md:top-0 bottom-0 rotate-[15deg] opacity-80 w-[150px] md:w-[290px]" />
-      </header>
+      <HomeBanner />
 
       <div className="mt-10">
         <div className="w-full flex flex-row justify-between items-center">
