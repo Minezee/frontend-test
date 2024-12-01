@@ -17,8 +17,6 @@ Karena API hanya mendukung fitur *login* tanpa opsi untuk menambahkan pengguna b
 - **Username**: `mor_2314`  
   **Password**: `83r5^_`
 
-untuk akun lainnya bisa dicek di : https://fakestoreapi.com/users
-
 ### Akun Lainnya
 Untuk melihat daftar akun lainnya, Anda dapat mengaksesnya di API berikut:  
 [https://fakestoreapi.com/users](https://fakestoreapi.com/users)
@@ -28,5 +26,3 @@ Karena API tidak mendukung penambahan data ke database, fitur registrasi hanya a
 
 ### Data Keranjang
 Karena API tidak mendukung penambahan data ke database, data keranjang akan disimpan di **localStorage**, bukan pada akun pengguna.
-
-# frontend-test
