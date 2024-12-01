@@ -52,6 +52,10 @@ const CartPage = () => {
           toast.error("Failed checkout product");
           router.push("/cart");
         },
+        onClose: () => {
+          toast.info("Payment was canceled");
+          router.push("/cart");
+        },
       });
     }).catch((err) => {
       console.error("Checkout Failed", err);
