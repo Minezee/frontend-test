@@ -35,8 +35,8 @@ const LoginPage = () => {
     .then((res) => {
       setCookie("token", res.token, 30)
       toast.dismiss();
-      toast.success("Login successful! Redirecting...");
       router.push("/product")
+      toast.success("Welcome! user");
     }).catch((err) => {
       toast.dismiss();
       toast.error("Error login");
