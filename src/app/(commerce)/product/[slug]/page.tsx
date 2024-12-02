@@ -41,7 +41,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <main className="container mx-auto px-4 lg:px-16 py-10 flex items-center justify-center lg:h-[80vh]">
+    <main className="container mx-auto px-4 lg:px-16 pt-10 pb-20 flex items-center justify-center lg:h-[80vh]">
       {!isLoading ?
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-20">
           <div className="w-full lg:w-[300px] aspect-square flex items-center justify-center bg-[#F5F6F6] p-5 rounded-xl">
