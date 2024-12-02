@@ -54,8 +54,8 @@ const Product = () => {
                 </button>
               ))
               :
-              Array.from({ length: 4 }).map(() => (
-                <div className="skeleton-load !rounded-full h-11 w-[180px]">
+              Array.from({ length: 4 }).map((_,idx) => (
+                <div key={`category-skel-${idx}`} className="skeleton-load !rounded-full h-11 w-[180px]">
                 </div>
               ))
             }
@@ -83,8 +83,8 @@ const Product = () => {
               <ProductCard key={product.id} product={product} />
             ))
             :
-            Array.from({ length: 10 }).map(() => (
-              <SkeletonCard />
+            Array.from({ length: 10 }).map((_, idx) => (
+              <SkeletonCard key={`product-skel-${idx}`}/>
             ))
           }
         </div>

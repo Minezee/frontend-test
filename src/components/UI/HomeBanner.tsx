@@ -29,7 +29,7 @@ const HomeBanner = () => {
           className="md:absolute z-10 -right-0 md:top-0 bottom-0"
         >
           {filteredProducts?.map((products: ProductProps) => (
-            <SwiperSlide>
+            <SwiperSlide key={`banner-${products.id}`}>
               <header className="relative w-full bg-gray-bg h-auto md:h-72 rounded-lg p-3 md:p-10 flex flex-col-reverse md:flex-row items-center md:items-start gap-4 justify-between">
                 <div className="flex flex-col justify-start md:justify-center h-full gap-3 md:gap-10">
                   <h2 className="text-primary font-bold text-2xl md:text-5xl md:max-w-[600px] z-40">Grab Up to 5% Off On Top Rating Products </h2>
