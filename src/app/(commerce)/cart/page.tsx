@@ -1,6 +1,7 @@
 'use client';
 
 import Script from "next/script";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 // @Hooks
@@ -23,12 +24,14 @@ declare global {
 }
 
 const CartPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter()
   const { state, dispatch } = useCart();
   const { mutateAsync: checkout } = useCheckout();
   const totalPrice = state.items.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleCheckout = () => {
+    setIsLoading(true)
     const checkoutPayload = {
       amount: totalPrice.toFixed(0),
       customer: {
@@ -42,9 +45,10 @@ const CartPage = () => {
       payload: checkoutPayload
     }).then((res) => {
       console.log("Checkout Successful", res);
+      setIsLoading(false);
       window.snap.pay(res.token, {
         onSuccess: () => {
-          dispatch({ type: "REMOVE_ALL_CART" })
+          dispatch({ type: "REMOVE_ALL_CART" });
           router.push("/product");
           toast.success("Success checkout product");
         },
@@ -58,7 +62,8 @@ const CartPage = () => {
         },
       });
     }).catch((err) => {
-      console.error("Checkout Failed", err);
+      setIsLoading(false);
+      toast.error("Something went wrong :(")
     });
   }
 
@@ -85,7 +90,7 @@ const CartPage = () => {
         &&
         <div className={`${state.items.length >= 5 ? "sticky" : "fixed"} bottom-0 right-0 left-0 bg-white/50 backdrop-blur-sm border-t border-gray-500 h-24 px-4 flex items-center justify-between`}>
           <div className="font-medium lg:font-bold text-sm lg:text-base">Total Price: <span className="font-medium">{formatPrice(totalPrice)}</span></div>
-          <button onClick={handleCheckout} className="bg-gray-800 px-4 py-2 text-base lg:text-xl text-white rounded-lg">Ceckout</button>
+          <button onClick={handleCheckout} className="bg-gray-800 px-4 py-2 text-base lg:text-xl text-white rounded-lg">{!isLoading ? "Checkout" : "Please wait..."}</button>
         </div>
       }
     </main>
