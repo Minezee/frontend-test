@@ -8,7 +8,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import StarRating from '@/components/UI/StarRating';
 import { formatPrice } from '@/utils/helpers/formatPrice';
-import { FaMinus, FaPlus } from 'react-icons/fa';
+import { Minus, Plus } from 'lucide-react';
 
 const ProductDetail = () => {
   const pathname = usePathname();
@@ -58,11 +58,11 @@ const ProductDetail = () => {
             {token &&
               <div className="flex flex-row items-center gap-1 w-fit px-1 text-sm">
                 <button onClick={() => handleDecrement(product.id)} className='border border-gray-500 p-2 rounded-full'>
-                  <FaMinus />
+                  <Minus />
                 </button>
                 <div className="w-20 text-center text-lg border rounded-full border-gray-500">{productInCart ? productInCart.quantity : 0}</div>
                 <button onClick={() => handleIncrement(product.id)} className='border border-gray-500 p-2 rounded-full'>
-                  <FaPlus />
+                  <Plus />
                 </button>
               </div>
             }
@@ -82,7 +82,7 @@ const ProductDetail = () => {
               <div className='h-5 skeleton-load w-full'></div>
               <div className='h-5 skeleton-load w-1/2'></div>
             </div>
-            </div>
+          </div>
         </div>
       }
     </main>

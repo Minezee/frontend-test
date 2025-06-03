@@ -1,6 +1,5 @@
 'use client'
-import { FaMinus, FaPlus } from 'react-icons/fa'
-import { FaTrashCan } from 'react-icons/fa6'
+import { Minus, Plus, Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import { formatPrice } from '@/utils/helpers/formatPrice'
 import { useCart } from '@/context/CartContext'
@@ -49,11 +48,11 @@ const CartCard = ({ product }: { product: CartProductProps }) => {
           <span className="text-gray-400 text-sm">{formatPrice(product.price)}</span>
           <div className="flex flex-row items-center gap-1 border border-gray-400 w-fit px-1 text-sm">
             <button onClick={() => handleDecrement(product.id)}>
-              <FaMinus />
+              <Minus size={16} />
             </button>
             <div className="w-5 text-center text-base">{product.quantity}</div>
             <button onClick={() => handleIncrement(product.id)}>
-              <FaPlus />
+              <Plus size={16} />
             </button>
           </div>
           <span className="font-medium min-w-32 text-center">{formatPrice(product.price * product.quantity)}</span>
@@ -61,7 +60,7 @@ const CartCard = ({ product }: { product: CartProductProps }) => {
             onClick={() => handleRemoveFromCart(product.id)}
             className="bg-red-500 text-white p-2 rounded-md"
           >
-            <FaTrashCan />
+            <Trash2 size={16} />
           </button>
         </div>
       </div>
@@ -76,11 +75,11 @@ const CartCard = ({ product }: { product: CartProductProps }) => {
             <span className="text-gray-600 text-sm">{formatPrice(product.price)}</span>
             <div className="flex flex-row items-center gap-1 border border-gray-400 w-fit px-1 text-[8px]">
               <button onClick={() => handleDecrement(product.id)}>
-                <FaMinus />
+                <Minus size={16} />
               </button>
               <div className="w-5 text-center text-sm">{product.quantity}</div>
               <button onClick={() => handleIncrement(product.id)}>
-                <FaPlus />
+                <Plus size={16} />
               </button>
             </div>
           </div>

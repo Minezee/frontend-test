@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { Star, StarHalf } from "lucide-react";
 
 interface StarRatingProps {
   rating: number;
@@ -17,15 +17,22 @@ const StarRating = ({ rating }: StarRatingProps) => {
       {Array(fullStars)
         .fill(null)
         .map((_, index) => (
-          <FaStar key={`full-${index}`} className="text-primary" />
+          <Star className="text-primary w-4 h-4" fill="currentColor" />
         ))}
 
-      {hasHalfStar && <FaStarHalfAlt className="text-primary" />}
+      {hasHalfStar &&
+        <div className="flex relative">
+          <Star className="text-primary w-4 h-4" />
+          <StarHalf
+            className="text-primary w-4 h-4 absolute top-0"
+            fill="currentColor"
+          />
+        </div>}
 
       {Array(emptyStars)
         .fill(null)
         .map((_, index) => (
-          <FaRegStar key={`empty-${index}`} className="text-gray-300" />
+          <Star className="text-gray-300 w-4 h-4" />
         ))}
     </div>
   );

@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import Searchbar from '../UI/Searchbar';
-import { IoCartOutline } from 'react-icons/io5';
-import { MdPerson } from 'react-icons/md';
+import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
@@ -23,7 +22,7 @@ const Navbar = () => {
     <nav className="sticky z-50 right-0 left-0 top-0 bg-white/50 backdrop-blur-xl">
       <div className="container py-3 flex flex-row justify-between gap-4 items-center">
         <Link href={'/product'} className="flex flex-row items-center text-primary text-lg font-bold h-[32px] lg:h-[73px]">
-          <Image src={'/assets/svg/logo.svg'} width={60} height={60} alt="logo" className='w-9 lg:w-auto'/>
+          <Image src={'/assets/svg/logo.svg'} width={60} height={60} alt="logo" className='w-9 lg:w-auto' />
           <span >Shopman</span>
         </Link>
 
@@ -37,7 +36,7 @@ const Navbar = () => {
                 href={'/cart'}
                 className="relative flex flex-row items-center gap-1 text-sm text-gray-500 hover:bg-gray-200 rounded-full p-1"
               >
-                <IoCartOutline className="text-3xl" />
+                <ShoppingCart className="text-gray-500 text-3xl" />
                 {
                   state.items.length > 0 &&
                   <div className="absolute right-0 top-0 bg-red-600 text-white rounded-full w-4 h-4 aspect-square flex items-center justify-center text-xs">
