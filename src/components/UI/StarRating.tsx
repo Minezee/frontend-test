@@ -13,11 +13,11 @@ const StarRating = ({ rating }: StarRatingProps) => {
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
-    <div className="flex flex-row gap-1 text-base">
+    <div key={rating} className="flex flex-row gap-1 text-base">
       {Array(fullStars)
         .fill(null)
         .map((_, index) => (
-          <Star className="text-primary w-4 h-4" fill="currentColor" />
+          <Star key={index} className="text-primary w-4 h-4" fill="currentColor" />
         ))}
 
       {hasHalfStar &&

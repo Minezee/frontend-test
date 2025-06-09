@@ -72,8 +72,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState, (initial) => {
     if (typeof window !== "undefined") {
       const savedCart = localStorage.getItem("cart");
-      return savedCart ? JSON.parse(savedCart) : initial;
+      try {
+        if (savedCart && savedCart !== "undefined") {
+          return JSON.parse(savedCart);
+        }
+      } catch (error) {
+        console.error("Error parsing savedCart", error);
+      }
+      return initial;
     }
+
     return initial;
   });
 
