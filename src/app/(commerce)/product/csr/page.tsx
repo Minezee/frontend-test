@@ -115,7 +115,7 @@ const Product = () => {
 
 const ProductPage = () => {
     return (
-        <Suspense fallback={<div className="h-[300vh]"></div>}>
+        <Suspense fallback={<div>Loading...</div>}>
             <Product />
         </Suspense>
     )
