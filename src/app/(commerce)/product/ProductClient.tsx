@@ -20,6 +20,7 @@ import { sortOption } from "@/utils/data/sortOption";
 
 // @Helpers
 import { arrayToObject } from "@/utils/helpers/arrayToObject";
+import HomeBanner from "@/components/UI/HomeBanner";
 
 type Props = {
     products: ProductProps[];
@@ -50,6 +51,9 @@ const ProductClient = ({ products, categories }: Props) => {
 
     return (
         <main className="container pb-10">
+            {/* Home Banner */}
+            <HomeBanner />
+
             <div className="mt-10">
                 <div className="w-full flex flex-row justify-between items-center">
                     {/* Category Filter (desktop) */}
@@ -61,8 +65,8 @@ const ProductClient = ({ products, categories }: Props) => {
                                     setActiveCategory(category === activeCategory ? "" : category)
                                 }
                                 className={`px-4 py-2 text-xl rounded-full ${activeCategory === category
-                                        ? "bg-gray-500 text-white"
-                                        : "bg-white text-gray-500"
+                                    ? "bg-gray-500 text-white"
+                                    : "bg-white text-gray-500"
                                     } border-2 border-gray-500 hover:scale-110 transition-all duration-150`}
                             >
                                 {category}
